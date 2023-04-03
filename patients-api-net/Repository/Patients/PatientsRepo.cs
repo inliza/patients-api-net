@@ -78,7 +78,8 @@ namespace patients_api_net.Repository.Patients
         public async Task UpdatePatient(PatientsModel patient)
         {
             using var cnn = new SqlConnection(_cnnString);
-            using var cmd = new SqlCommand("UPDATE  Patients SET FirstName = @firstName,  LastName = @lastName, Gender = @gender,  Birthday = @birthday, PhoneNumber = @phoneNumber, UpdatedDate = @updatedDate", cnn);
+            using var cmd = new SqlCommand("UPDATE  Patients SET FirstName = @firstName,  LastName = @lastName, Gender = @gender,  Birthday = @birthday, PhoneNumber = @phoneNumber, UpdatedDate = @updatedDate WHERE Id = @id", cnn);
+            cmd.Parameters.AddWithValue("@id", patient.Id);
             cmd.Parameters.AddWithValue("@firstName", patient.FirstName);
             cmd.Parameters.AddWithValue("@lastName", patient.LastName);
             cmd.Parameters.AddWithValue("@gender", patient.Gender);
