@@ -7,7 +7,7 @@ namespace patients_api_net.Repository.Patients
 {
     public class PatientsRepo : IPatientsRepo
     {
-        private readonly string _cnnString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Patients;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private readonly string _cnnString = "Server=wdb4.my-hosting-panel.com;Database=carrosf1_patients;User Id=carrosf1_usrPatients;Password=K8ch03@r0;";
 
         public PatientsRepo()
         {
